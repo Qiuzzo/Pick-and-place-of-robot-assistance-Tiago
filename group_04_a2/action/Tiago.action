@@ -1,0 +1,13 @@
+# Goal definition, pose of the goal
+std_msgs/Header head_goal
+geometry_msgs/PoseStamped goal_pose
+bool linear_init
+---
+# Result definition, list of points for the obstacles
+std_msgs/Header head_result
+geometry_msgs/PoseStamped[] result_points
+---
+# Feedback definition, string of what is happening, int of the status
+std_msgs/Header head_feedback
+string feedback_message
+uint8 status
