@@ -1,0 +1,9 @@
+#Goal definition
+geometry_msgs/Pose[] poses #Object that need to be collisonObjs
+int32[] ids                #ID of the objects, define what are the grabbable objects
+bool pick                  #True if the goal is to pick, false if the goal is to place
+---
+#Result
+bool success
+---
+#Feedback
