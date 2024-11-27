@@ -3,7 +3,7 @@
 
 #include <ros/ros.h>
 #include <actionlib/server/simple_action_server.h>
-#include <group_04_a2/CameraAction.h>
+#include <project/CameraAction.h>
 #include <apriltag_ros/AprilTagDetectionArray.h>
 #include <tf2_ros/transform_listener.h>
 #include <geometry_msgs/PoseStamped.h>
@@ -44,11 +44,11 @@ public:
 
     /// @brief Function that is called when the goal is received
     /// @param goal Goal containing a bool to decide if we need detection or color recognition
-    void goalCB(const group_04_a2::CameraGoalConstPtr &goal);
+    void goalCB(const project::CameraGoalConstPtr &goal);
 
     /// @brief Function that is called when color recognition is required
     /// @param goal Goal containing the order of the objects
-    std::vector<int> colorGoalCB(const group_04_a2::CameraGoalConstPtr &goal);
+    std::vector<int> colorGoalCB(const project::CameraGoalConstPtr &goal);
 
     /// @brief Function that is called when the camera topic is received, it stores the image as a cv::Mat
     /// @param msg Message containing the camera image
@@ -69,10 +69,10 @@ protected:
     // Node handle
     ros::NodeHandle nh_;
     // Variables for the action server
-    actionlib::SimpleActionServer<group_04_a2::CameraAction> as_;
+    actionlib::SimpleActionServer<project::CameraAction> as_;
     std::string action_name_;
-    group_04_a2::CameraFeedback feedback_;
-    group_04_a2::CameraResult result_;
+    project::CameraFeedback feedback_;
+    project::CameraResult result_;
 
     //Subscriber to tag_detections topic
     ros::Subscriber sub_det_;
